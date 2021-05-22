@@ -1,30 +1,20 @@
-[![Build Status](https://travis-ci.com/DiscipleTools/disciple-tools-plugin-starter-template.svg?branch=master)](https://travis-ci.com/DiscipleTools/disciple-tools-plugin-starter-template)
+[![Build Status](https://travis-ci.com/DiscipleTools/nt-dispatch-status.svg?branch=master)](https://travis-ci.com/DiscipleTools/nt-dispatch-status)
 
-# Disciple Tools - Name
+# Disciple Tools - NT Dispatch Staus
 
-Description Description Description Description Description Description Description
-Description Description Description Description Description Description Description
+This plugin creates a set of status flags that can be applied to each contact to indicate whether an NT is required, has been sent or has been received.
 
 ## Purpose
 
-Purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose
-Purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose
-
-Purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose
-Purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose
+To help keep track of all the NT requests and ensure nobody gets left out.
 
 ## Usage
 
 #### Will Do
 
-- Item
-- Item
-- Item
-
-#### Will Not Do
-
-- Item
-- Item
+- Update contact NT status
+- Send notification to Multiplier/Postman
+- Update Faith Milestone to: "has Bible"
 
 ## Requirements
 
@@ -38,11 +28,11 @@ Purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose 
 ## Contribution
 
 Contributions welcome. You can report issues and bugs in the
-[Issues](https://github.com/DiscipleTools/disciple-tools-plugin-starter-template/issues) section of the repo. You can present ideas
-in the [Discussions](https://github.com/DiscipleTools/disciple-tools-plugin-starter-template/discussions) section of the repo. And
-code contributions are welcome using the [Pull Request](https://github.com/DiscipleTools/disciple-tools-plugin-starter-template/pulls)
+[Issues](https://github.com/DiscipleTools/nt-dispatch-status/issues) section of the repo. You can present ideas
+in the [Discussions](https://github.com/DiscipleTools/nt-dispatch-status/discussions) section of the repo. And
+code contributions are welcome using the [Pull Request](https://github.com/DiscipleTools/nt-dispatch-status/pulls)
 system for git. For a more details on contribution see the
-[contribution guidelines](https://github.com/DiscipleTools/disciple-tools-plugin-starter-template/blob/master/CONTRIBUTING.md).
+[contribution guidelines](https://github.com/DiscipleTools/nt-dispatch-status/blob/master/CONTRIBUTING.md).
 
 
 ## Screenshots
