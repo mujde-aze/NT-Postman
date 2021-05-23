@@ -1,8 +1,9 @@
 [![Build Status](https://travis-ci.com/DiscipleTools/nt-postman.svg?branch=master)](https://travis-ci.com/DiscipleTools/nt-postman)
 
-# Disciple Tools - NT Dispatch Staus
+# Disciple Tools - NT Postman
 
-This plugin creates a set of status flags that can be applied to each contact to indicate whether an NT is required, has been sent or has been received.
+This plugin creates a set of status flags that can be applied to each contact to indicate whether an NT is required, has been sent or has been received. Once the appropriate status flag is set,
+a privileged user (the Postman) will be able to see a filtered view of these contacts and select entries for printing.
 
 ## Purpose
 
@@ -13,7 +14,8 @@ To help keep track of all the NT requests and ensure nobody gets left out.
 #### Will Do
 
 - Update contact NT status
-- Send notification to Multiplier/Postman
+- Allow Postman to see only contacts with the appropriate status
+- Generate a printable PDF of contacts
 - Update Faith Milestone to: "has Bible"
 
 ## Requirements

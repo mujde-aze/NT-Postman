@@ -33,7 +33,7 @@ class NT_Postman_Site_Links {
     }
 
     public function site_link_type( $type ) {
-        $type[$this->type] = __( 'NT Dispatch Status' );
+        $type[$this->type] = __( 'NT Postman' );
         return $type;
     }
 }

@@ -9,7 +9,7 @@ if ( !defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 class NT_Postman_Chart_Template extends DT_Metrics_Chart_Base
 {
     public $base_slug = 'nt-postman-metrics'; // lowercase
-    public $base_title = "NT Dispatch Status Metrics";
+    public $base_title = "NT Postman Metrics";
 
     public $title = 'Template';
     public $slug = 'template'; // lowercase

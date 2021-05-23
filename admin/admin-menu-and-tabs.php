@@ -44,7 +44,7 @@ class NT_Postman_Menu {
      * @since 0.1
      */
     public function register_menu() {
-        add_submenu_page( 'dt_extensions', 'NT Dispatch Status', 'NT Dispatch Status', 'manage_dt', $this->token, [ $this, 'content' ] );
+        add_submenu_page( 'dt_extensions', 'NT Postman', 'NT Postman', 'manage_dt', $this->token, [ $this, 'content' ] );
     }
 
     /**
@@ -72,7 +72,7 @@ class NT_Postman_Menu {
 
         ?>
         <div class="wrap">
-            <h2>NT Dispatch Status</h2>
+            <h2>NT Postman</h2>
             <h2 class="nav-tab-wrapper">
                 <a href="<?php echo esc_attr( $link ) . 'general' ?>"
                    class="nav-tab <?php echo esc_html( ( $tab == 'general' || !isset( $tab ) ) ? 'nav-tab-active' : '' ); ?>">General</a>

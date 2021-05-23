@@ -29,7 +29,7 @@ class NT_Postman_Tile
      */
     public function dt_details_additional_tiles( $tiles, $post_type = "" ) {
         if ( $post_type === "contacts" ){
-            $tiles["nt_postman"] = [ "label" => __( "NT Dispatch Status", 'disciple_tools' ) ];
+            $tiles["nt_postman"] = [ "label" => __( "NT Postman", 'disciple_tools' ) ];
         }
         return $tiles;
     }
@@ -58,18 +58,18 @@ class NT_Postman_Tile
             /**
              * This is an example of a text field
              */
-            $fields['nT_Dispatch_S tatus_text'] = [
+            $fields['nt_postman_text'] = [
                 'name'        => __( 'Text', 'disciple_tools' ),
                 'description' => _x( 'Text', 'Optional Documentation', 'disciple_tools' ),
                 'type'        => 'text',
                 'default'     => '',
-                'tile' => 'nT_Dispatch_S tatus',
+                'tile' => 'nt_postman',
                 'icon' => get_template_directory_uri() . '/dt-assets/images/edit.svg',
             ];
             /**
              * This is an example of a multiselect field
              */
-            $fields["nT_Dispatch_S tatus_multiselect"] = [
+            $fields["nt_postman_multiselect"] = [
                 "name" => __( 'Multiselect', 'disciple_tools' ),
                 "default" => [
                     "one" => [ "label" => __( "One", 'disciple_tools' ) ],
@@ -77,7 +77,7 @@ class NT_Postman_Tile
                     "three" => [ "label" => __( "Three", 'disciple_tools' ) ],
                     "four" => [ "label" => __( "Four", 'disciple_tools' ) ],
                 ],
-                "tile" => "nT_Dispatch_S tatus",
+                "tile" => "nt_postman",
                 "type" => "multi_select",
                 "hidden" => false,
                 'icon' => get_template_directory_uri() . '/dt-assets/images/edit.svg',
@@ -85,7 +85,7 @@ class NT_Postman_Tile
             /**
              * This is an example of a key select field
              */
-            $fields["nT_Dispatch_S tatus_keyselect"] = [
+            $fields["nt_postman_keyselect"] = [
                 'name' => "Key Select",
                 'type' => 'key_select',
                 "tile" => "nt_postman",

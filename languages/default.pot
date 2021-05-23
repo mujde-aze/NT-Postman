@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Disciple Tools - NT Dispatch Status\n"
+"Project-Id-Version: Disciple Tools - NT Postman\n"
 "POT-Creation-Date: 2020-05-07 10:44+0100\n"
 "PO-Revision-Date: 2018-01-29 05:53-0700\n"
 "Last-Translator: \n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: nt-postman.php:316
 msgid ""
-"'Disciple Tools - NT Dispatch Status' plugin requires 'Disciple Tools' theme to "
+"'Disciple Tools - NT Postman' plugin requires 'Disciple Tools' theme to "
 "work. Please activate 'Disciple Tools' theme or make sure it is latest "
 "version."
 msgstr ""
@@ -40,7 +40,7 @@ msgstr ""
 
 #: includes/admin/admin-menu-and-tabs.php:62
 #: includes/admin/admin-menu-and-tabs.php:90
-msgid "NT Dispatch Status"
+msgid "NT Postman"
 msgstr ""
 
 #: includes/admin/admin-menu-and-tabs.php:77

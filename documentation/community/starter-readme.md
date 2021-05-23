@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/DiscipleTools/nt-postman.svg?branch=master)](https://travis-ci.com/DiscipleTools/nt-postman)
 
-# Disciple Tools - NT Dispatch Status
+# Disciple Tools - NT Postman
 
 __Kick start your Disciple.Tools plugin project with this template!__
 

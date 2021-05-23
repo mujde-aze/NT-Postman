@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Disciple Tools - NT Dispatch Status
+ * Plugin Name: Disciple Tools - NT Postman
  * Plugin URI: https://github.com/DiscipleTools/nt-postman
- * Description: Disciple Tools - NT Dispatch Status is intended to help developers and integrator jumpstart their extension of the Disciple Tools system.
+ * Description: Disciple Tools - NT Postman is intended to help developers and integrator jumpstart their extension of the Disciple Tools system.
  * Text Domain: nt-postman
  * Domain Path: /languages
  * Version:  0.1
@@ -255,7 +255,7 @@ if ( ! function_exists( 'nt_postman_hook_admin_notice' ) ) {
         global $nt_postman_required_dt_theme_version;
         $wp_theme = wp_get_theme();
         $current_version = $wp_theme->version;
-        $message = "'Disciple Tools - NT Dispatch Status' plugin requires 'Disciple Tools' theme to work. Please activate 'Disciple Tools' theme or make sure it is latest version.";
+        $message = "'Disciple Tools - NT Postman' plugin requires 'Disciple Tools' theme to work. Please activate 'Disciple Tools' theme or make sure it is latest version.";
         if ( $wp_theme->get_template() === "disciple-tools-theme" ){
             $message .= ' ' . sprintf( esc_html( 'Current Disciple Tools version: %1$s, required version: %2$s' ), esc_html( $current_version ), esc_html( $nt_postman_required_dt_theme_version ) );
         }
