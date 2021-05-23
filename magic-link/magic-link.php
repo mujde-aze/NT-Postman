@@ -11,7 +11,7 @@ class Disciple_Tools_Plugin_Starter_Magic_Link extends DT_Magic_Url_Base {
     public $page_title = 'Magic';
     public $root = "magic_app"; // @todo define the root of the url {yoursite}/root/type/key/action
     public $type = 'magic_type'; // @todo define the type
-    public $post_type = 'nt_postman_starter_post_type'; // @todo set the post type this magic link connects with.
+    public $post_type = 'nt_postman_post_type'; // @todo set the post type this magic link connects with.
     private $meta_key = '';
 
     private static $_instance = null;

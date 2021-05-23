@@ -2,12 +2,12 @@
 /**
  * Plugin Name: Disciple Tools - NT Postman
  * Plugin URI: https://github.com/DiscipleTools/nt-postman
- * Description: Disciple Tools - NT Postman is intended to help developers and integrator jumpstart their extension of the Disciple Tools system.
+ * Description: Disciple Tools - NT Postman helps to keep track of contacts that require NTs posted.
  * Text Domain: nt-postman
  * Domain Path: /languages
  * Version:  0.1
- * Author URI: https://github.com/DiscipleTools
- * GitHub Plugin URI: https://github.com/DiscipleTools/nt-postman
+ * Author URI: https://github.com/crafton
+ * GitHub Plugin URI: https://github.com/crafton/NT-Postman
  * Requires at least: 4.7.0
  * (Requires 4.7+ because of the integration of the REST API at 4.7 and the security requirements of this milestone version.)
  * Tested up to: 5.6
