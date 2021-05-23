@@ -81,33 +81,12 @@ class NT_Postman {
 
     private function __construct() {
         $is_rest = dt_is_rest();
-        /**
-         * @todo Decide if you want to use the REST API example
-         * To remove: delete this following line and remove the folder named /rest-api
-         */
-        if ( $is_rest && strpos( dt_get_url_path(), 'nt_postman_template' ) !== false ) {
-            require_once( 'rest-api/rest-api.php' ); // adds starter rest api class
-        }
-
-        /**
-         * @todo Decide if you want to create a new post type
-         * To remove: delete the line below and remove the folder named /post-type
-         */
-        require_once( 'post-type/loader.php' ); // add starter post type extension to Disciple Tools system
 
         /**
          * @todo Decide if you want to create a custom site-to-site link
          * To remove: delete the line below and remove the folder named /site-link
          */
         require_once( 'site-link/custom-site-to-site-links.php' ); // add site to site link class and capabilities
-
-        /**
-         * @todo Decide if you want to add new charts to the metrics section
-         * To remove: delete the line below and remove the folder named /charts
-         */
-        if ( strpos( dt_get_url_path(), 'metrics' ) !== false || ( $is_rest && strpos( dt_get_url_path(), 'nt-postman-metrics' ) !== false ) ){
-            require_once( 'charts/charts-loader.php' );  // add custom charts to the metrics area
-        }
 
         /**
          * @todo Decide if you want to add a custom tile
@@ -120,14 +99,6 @@ class NT_Postman {
          * To remove: delete the line below and remove the folder named /magic-link
          */
         require_once( 'magic-link/magic-link.php' );
-
-        /**
-         * @todo Decide if you want to add a custom admin page in the admin area
-         * To remove: delete the 3 lines below and remove the folder named /admin
-         */
-        if ( is_admin() ) {
-            require_once( 'admin/admin-menu-and-tabs.php' ); // adds starter admin page and section for plugin
-        }
 
         /**
          * @todo Decide if you want to support localization of your plugin
