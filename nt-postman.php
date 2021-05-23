@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Disciple Tools - NT Postman
- * Plugin URI: https://github.com/DiscipleTools/nt-postman
+ * Plugin URI: https://github.com/crafton/NT-Postman
  * Description: Disciple Tools - NT Postman helps to keep track of contacts that require NTs posted.
  * Text Domain: nt-postman
  * Domain Path: /languages
