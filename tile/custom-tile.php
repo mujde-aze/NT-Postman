@@ -1,7 +1,7 @@
 <?php
 if ( !defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 
-class NT_Dispatch_Status_Tile
+class NT_Postman_Tile
 {
     private static $_instance = null;
     public static function instance(){
@@ -29,7 +29,7 @@ class NT_Dispatch_Status_Tile
      */
     public function dt_details_additional_tiles( $tiles, $post_type = "" ) {
         if ( $post_type === "contacts" ){
-            $tiles["nt_dispatch_status"] = [ "label" => __( "NT Dispatch Status", 'disciple_tools' ) ];
+            $tiles["nt_postman"] = [ "label" => __( "NT Dispatch Status", 'disciple_tools' ) ];
         }
         return $tiles;
     }
@@ -88,7 +88,7 @@ class NT_Dispatch_Status_Tile
             $fields["nT_Dispatch_S tatus_keyselect"] = [
                 'name' => "Key Select",
                 'type' => 'key_select',
-                "tile" => "nt_dispatch_status",
+                "tile" => "nt_postman",
                 'default' => [
                     'new'   => [
                         "label" => _x( 'New', 'Training Status label', 'disciple_tools' ),
@@ -138,7 +138,7 @@ class NT_Dispatch_Status_Tile
         /**
          * @todo set the post type and the section key that you created in the dt_details_additional_tiles() function
          */
-        if ( $post_type === "contacts" && $section === "nt_dispatch_status" ){
+        if ( $post_type === "contacts" && $section === "nt_postman" ){
             /**
              * These are two sets of key data:
              * $this_post is the details for this specific post
@@ -164,4 +164,4 @@ class NT_Dispatch_Status_Tile
         <?php }
     }
 }
-NT_Dispatch_Status_Tile::instance();
+NT_Postman_Tile::instance();

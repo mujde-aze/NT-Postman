@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/DiscipleTools/nt-dispatch-status.svg?branch=master)](https://travis-ci.com/DiscipleTools/nt-dispatch-status)
+[![Build Status](https://travis-ci.com/DiscipleTools/nt-postman.svg?branch=master)](https://travis-ci.com/DiscipleTools/nt-postman)
 
 # Disciple Tools - NT Dispatch Staus
 
@@ -28,11 +28,11 @@ To help keep track of all the NT requests and ensure nobody gets left out.
 ## Contribution
 
 Contributions welcome. You can report issues and bugs in the
-[Issues](https://github.com/DiscipleTools/nt-dispatch-status/issues) section of the repo. You can present ideas
-in the [Discussions](https://github.com/DiscipleTools/nt-dispatch-status/discussions) section of the repo. And
-code contributions are welcome using the [Pull Request](https://github.com/DiscipleTools/nt-dispatch-status/pulls)
+[Issues](https://github.com/DiscipleTools/nt-postman/issues) section of the repo. You can present ideas
+in the [Discussions](https://github.com/DiscipleTools/nt-postman/discussions) section of the repo. And
+code contributions are welcome using the [Pull Request](https://github.com/DiscipleTools/nt-postman/pulls)
 system for git. For a more details on contribution see the
-[contribution guidelines](https://github.com/DiscipleTools/nt-dispatch-status/blob/master/CONTRIBUTING.md).
+[contribution guidelines](https://github.com/DiscipleTools/nt-postman/blob/master/CONTRIBUTING.md).
 
 
 ## Screenshots

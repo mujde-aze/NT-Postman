@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name: Disciple Tools - NT Dispatch Status
- * Plugin URI: https://github.com/DiscipleTools/nt-dispatch-status
+ * Plugin URI: https://github.com/DiscipleTools/nt-postman
  * Description: Disciple Tools - NT Dispatch Status is intended to help developers and integrator jumpstart their extension of the Disciple Tools system.
- * Text Domain: nt-dispatch-status
+ * Text Domain: nt-postman
  * Domain Path: /languages
  * Version:  0.1
  * Author URI: https://github.com/DiscipleTools
- * GitHub Plugin URI: https://github.com/DiscipleTools/nt-dispatch-status
+ * GitHub Plugin URI: https://github.com/DiscipleTools/nt-postman
  * Requires at least: 4.7.0
  * (Requires 4.7+ because of the integration of the REST API at 4.7 and the security requirements of this milestone version.)
  * Tested up to: 5.6
@@ -28,14 +28,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Gets the instance of the `NT_Dispatch_Status` class.
+ * Gets the instance of the `NT_Postman` class.
  *
  * @since  0.1
  * @access public
  * @return object|bool
  */
-function nt_dispatch_status() {
-    $nt_dispatch_status_required_dt_theme_version = '1.0';
+function nt_postman() {
+    $nt_postman_required_dt_theme_version = '1.0';
     $wp_theme = wp_get_theme();
     $version = $wp_theme->version;
 
@@ -43,8 +43,8 @@ function nt_dispatch_status() {
      * Check if the Disciple.Tools theme is loaded and is the latest required version
      */
     $is_theme_dt = strpos( $wp_theme->get_template(), "disciple-tools-theme" ) !== false || $wp_theme->name === "Disciple Tools";
-    if ( $is_theme_dt && version_compare( $version, $nt_dispatch_status_required_dt_theme_version, "<" ) ) {
-        add_action( 'admin_notices', 'nt_dispatch_status_hook_admin_notice' );
+    if ( $is_theme_dt && version_compare( $version, $nt_postman_required_dt_theme_version, "<" ) ) {
+        add_action( 'admin_notices', 'nt_postman_hook_admin_notice' );
         add_action( 'wp_ajax_dismissed_notice_handler', 'dt_hook_ajax_notice_handler' );
         return false;
     }
@@ -58,10 +58,10 @@ function nt_dispatch_status() {
         require_once get_template_directory() . '/dt-core/global-functions.php';
     }
 
-    return NT_Dispatch_Status::instance();
+    return NT_Postman::instance();
 
 }
-add_action( 'after_setup_theme', 'nt_dispatch_status', 20 );
+add_action( 'after_setup_theme', 'nt_postman', 20 );
 
 /**
  * Singleton class for setting up the plugin.
@@ -69,7 +69,7 @@ add_action( 'after_setup_theme', 'nt_dispatch_status', 20 );
  * @since  0.1
  * @access public
  */
-class NT_Dispatch_Status {
+class NT_Postman {
 
     private static $_instance = null;
     public static function instance() {
@@ -85,7 +85,7 @@ class NT_Dispatch_Status {
          * @todo Decide if you want to use the REST API example
          * To remove: delete this following line and remove the folder named /rest-api
          */
-        if ( $is_rest && strpos( dt_get_url_path(), 'nt_dispatch_status_template' ) !== false ) {
+        if ( $is_rest && strpos( dt_get_url_path(), 'nt_postman_template' ) !== false ) {
             require_once( 'rest-api/rest-api.php' ); // adds starter rest api class
         }
 
@@ -105,7 +105,7 @@ class NT_Dispatch_Status {
          * @todo Decide if you want to add new charts to the metrics section
          * To remove: delete the line below and remove the folder named /charts
          */
-        if ( strpos( dt_get_url_path(), 'metrics' ) !== false || ( $is_rest && strpos( dt_get_url_path(), 'nt-dispatch-status-metrics' ) !== false ) ){
+        if ( strpos( dt_get_url_path(), 'metrics' ) !== false || ( $is_rest && strpos( dt_get_url_path(), 'nt-postman-metrics' ) !== false ) ){
             require_once( 'charts/charts-loader.php' );  // add custom charts to the metrics area
         }
 
@@ -180,7 +180,7 @@ class NT_Dispatch_Status {
      */
     public static function deactivation() {
         // add functions here that need to happen on deactivation
-        delete_option( 'dismissed-nt-dispatch-status' );
+        delete_option( 'dismissed-nt-postman' );
     }
 
     /**
@@ -191,7 +191,7 @@ class NT_Dispatch_Status {
      * @return void
      */
     public function i18n() {
-        $domain = 'nt-dispatch-status';
+        $domain = 'nt-postman';
         load_plugin_textdomain( $domain, false, trailingslashit( dirname( plugin_basename( __FILE__ ) ) ). 'languages' );
     }
 
@@ -203,7 +203,7 @@ class NT_Dispatch_Status {
      * @return string
      */
     public function __toString() {
-        return 'nt-dispatch-status';
+        return 'nt-postman';
     }
 
     /**
@@ -238,7 +238,7 @@ class NT_Dispatch_Status {
      * @access public
      */
     public function __call( $method = '', $args = array() ) {
-        _doing_it_wrong( "nt_dispatch_status::" . esc_html( $method ), 'Method does not exist.', '0.1' );
+        _doing_it_wrong( "nt_postman::" . esc_html( $method ), 'Method does not exist.', '0.1' );
         unset( $method, $args );
         return null;
     }
@@ -246,32 +246,32 @@ class NT_Dispatch_Status {
 
 
 // Register activation hook.
-register_activation_hook( __FILE__, [ 'NT_Dispatch_Status', 'activation' ] );
-register_deactivation_hook( __FILE__, [ 'NT_Dispatch_Status', 'deactivation' ] );
+register_activation_hook( __FILE__, [ 'NT_Postman', 'activation' ] );
+register_deactivation_hook( __FILE__, [ 'NT_Postman', 'deactivation' ] );
 
 
-if ( ! function_exists( 'nt_dispatch_status_hook_admin_notice' ) ) {
-    function nt_dispatch_status_hook_admin_notice() {
-        global $nt_dispatch_status_required_dt_theme_version;
+if ( ! function_exists( 'nt_postman_hook_admin_notice' ) ) {
+    function nt_postman_hook_admin_notice() {
+        global $nt_postman_required_dt_theme_version;
         $wp_theme = wp_get_theme();
         $current_version = $wp_theme->version;
         $message = "'Disciple Tools - NT Dispatch Status' plugin requires 'Disciple Tools' theme to work. Please activate 'Disciple Tools' theme or make sure it is latest version.";
         if ( $wp_theme->get_template() === "disciple-tools-theme" ){
-            $message .= ' ' . sprintf( esc_html( 'Current Disciple Tools version: %1$s, required version: %2$s' ), esc_html( $current_version ), esc_html( $nt_dispatch_status_required_dt_theme_version ) );
+            $message .= ' ' . sprintf( esc_html( 'Current Disciple Tools version: %1$s, required version: %2$s' ), esc_html( $current_version ), esc_html( $nt_postman_required_dt_theme_version ) );
         }
         // Check if it's been dismissed...
-        if ( ! get_option( 'dismissed-nt-dispatch-status', false ) ) { ?>
-            <div class="notice notice-error notice-nt-dispatch-status is-dismissible" data-notice="nt-dispatch-status">
+        if ( ! get_option( 'dismissed-nt-postman', false ) ) { ?>
+            <div class="notice notice-error notice-nt-postman is-dismissible" data-notice="nt-postman">
                 <p><?php echo esc_html( $message );?></p>
             </div>
             <script>
                 jQuery(function($) {
-                    $( document ).on( 'click', '.notice-nt-dispatch-status .notice-dismiss', function () {
+                    $( document ).on( 'click', '.notice-nt-postman .notice-dismiss', function () {
                         $.ajax( ajaxurl, {
                             type: 'POST',
                             data: {
                                 action: 'dismissed_notice_handler',
-                                type: 'nt-dispatch-status',
+                                type: 'nt-postman',
                                 security: '<?php echo esc_html( wp_create_nonce( 'wp_rest_dismiss' ) ) ?>'
                             }
                         })
@@ -303,7 +303,7 @@ if ( ! function_exists( "dt_hook_ajax_notice_handler" )){
  * This section runs the remote plugin updating service, so you can issue distributed updates to your plugin
  *
  * @note See the instructions for version updating to understand the steps involved.
- * @link https://github.com/DiscipleTools/nt-dispatch-status/wiki/Configuring-Remote-Updating-System
+ * @link https://github.com/DiscipleTools/nt-postman/wiki/Configuring-Remote-Updating-System
  *
  * @todo Enable this section with your own hosted file
  * @todo An example of this file can be found in (version-control.json)
@@ -328,9 +328,9 @@ if ( ! function_exists( "dt_hook_ajax_notice_handler" )){
 //        }
 //        if ( class_exists( 'Puc_v4_Factory' ) ){
 //            Puc_v4_Factory::buildUpdateChecker(
-//                'https://raw.githubusercontent.com/DiscipleTools/nt-dispatch-status/master/version-control.json',
+//                'https://raw.githubusercontent.com/DiscipleTools/nt-postman/master/version-control.json',
 //                __FILE__,
-//                'nt-dispatch-status'
+//                'nt-postman'
 //            );
 //
 //        }

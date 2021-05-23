@@ -1,7 +1,7 @@
 <?php
 if ( !defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 
-class NT_Dispatch_Status_Charts
+class NT_Postman_Charts
 {
     private static $_instance = null;
     public static function instance(){
@@ -14,7 +14,7 @@ class NT_Dispatch_Status_Charts
     public function __construct(){
 
         require_once( 'one-page-chart-template.php' );
-        new NT_Dispatch_Status_Chart_Template();
+        new NT_Postman_Chart_Template();
 
         /**
          * @todo add other charts like the pattern above here
@@ -22,4 +22,4 @@ class NT_Dispatch_Status_Charts
 
     } // End __construct
 }
-NT_Dispatch_Status_Charts::instance();
+NT_Postman_Charts::instance();

@@ -23,7 +23,7 @@ add_filter( 'dt_post_type_modules', function( $modules ){
         "enabled" => true,
         "locked" => true,
         "prerequisites" => [ "contacts_base" ],
-        "post_type" => "nt_dispatch_starter_post_type",
+        "post_type" => "nt_postman_starter_post_type",
         "description" => "Default starter functionality"
     ];
 
@@ -31,7 +31,7 @@ add_filter( 'dt_post_type_modules', function( $modules ){
 }, 20, 1 );
 
 require_once 'module-base.php';
-NT_Dispatch_Status_Base::instance();
+NT_Postman_Base::instance();
 
 /**
  * @todo require_once and load additional modules

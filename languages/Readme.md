@@ -2,4 +2,4 @@
 {translation-domain}-{localisation}.po
 
 ex:
-nt-dispatch-status-fr_FR.po
+nt-postman-fr_FR.po

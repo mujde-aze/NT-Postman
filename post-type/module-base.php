@@ -2,22 +2,22 @@
 if ( !defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 
 /**
- * Class NT_Dispatch_Status_Base
+ * Class NT_Postman_Base
  * Load the core post type hooks into the Disciple Tools system
  */
-class NT_Dispatch_Status_Base extends DT_Module_Base {
+class NT_Postman_Base extends DT_Module_Base {
 
     /**
      * Define post type variables
      * @todo update these variables with your post_type, module key, and names.
      * @var string
      */
-    public $post_type = "nt_dispatch_starter_post_type";
+    public $post_type = "nt_postman_starter_post_type";
     public $module = "starter_base";
     public $single_name = 'Starter';
     public $plural_name = 'Starters';
     public static function post_type(){
-        return 'nt_dispatch_starter_post_type';
+        return 'nt_postman_starter_post_type';
     }
 
     private static $_instance = null;

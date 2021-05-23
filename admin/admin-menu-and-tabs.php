@@ -2,22 +2,22 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly
 
 /**
- * Class NT_Dispatch_Status_Menu
+ * Class NT_Postman_Menu
  */
-class NT_Dispatch_Status_Menu {
+class NT_Postman_Menu {
 
-    public $token = 'nt_dispatch_status';
+    public $token = 'nt_postman';
 
     private static $_instance = null;
 
     /**
-     * NT_Dispatch_Status_Menu Instance
+     * NT_Postman_Menu Instance
      *
-     * Ensures only one instance of NT_Dispatch_Status_Menu is loaded or can be loaded.
+     * Ensures only one instance of NT_Postman_Menu is loaded or can be loaded.
      *
      * @since 0.1.0
      * @static
-     * @return NT_Dispatch_Status_Menu instance
+     * @return NT_Postman_Menu instance
      */
     public static function instance() {
         if ( is_null( self::$_instance ) ) {
@@ -82,11 +82,11 @@ class NT_Dispatch_Status_Menu {
             <?php
             switch ($tab) {
                 case "general":
-                    $object = new NT_Dispatch_Status_Tab_General();
+                    $object = new NT_Postman_Tab_General();
                     $object->content();
                     break;
                 case "second":
-                    $object = new NT_Dispatch_Status_Tab_Second();
+                    $object = new NT_Postman_Tab_Second();
                     $object->content();
                     break;
                 default:
@@ -99,12 +99,12 @@ class NT_Dispatch_Status_Menu {
         <?php
     }
 }
-NT_Dispatch_Status_Menu::instance();
+NT_Postman_Menu::instance();
 
 /**
- * Class NT_Dispatch_Status_Tab_General
+ * Class NT_Postman_Tab_General
  */
-class NT_Dispatch_Status_Tab_General {
+class NT_Postman_Tab_General {
     public function content() {
         ?>
         <div class="wrap">
@@ -179,9 +179,9 @@ class NT_Dispatch_Status_Tab_General {
 
 
 /**
- * Class NT_Dispatch_Status_Tab_Second
+ * Class NT_Postman_Tab_Second
  */
-class NT_Dispatch_Status_Tab_Second {
+class NT_Postman_Tab_Second {
     public function content() {
         ?>
         <div class="wrap">

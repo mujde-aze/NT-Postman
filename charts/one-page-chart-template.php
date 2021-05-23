@@ -6,9 +6,9 @@ if ( !defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
  * @todo also rename in charts-loader.php
  */
 
-class NT_Dispatch_Status_Chart_Template extends DT_Metrics_Chart_Base
+class NT_Postman_Chart_Template extends DT_Metrics_Chart_Base
 {
-    public $base_slug = 'nt-dispatch-status-metrics'; // lowercase
+    public $base_slug = 'nt-postman-metrics'; // lowercase
     public $base_title = "NT Dispatch Status Metrics";
 
     public $title = 'Template';

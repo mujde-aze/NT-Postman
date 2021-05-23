@@ -1,7 +1,7 @@
 <?php
 if ( !defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 
-class NT_Dispatch_Status_Endpoints
+class NT_Postman_Endpoints
 {
     /**
      * @todo Set the permissions your endpoint needs
@@ -19,7 +19,7 @@ class NT_Dispatch_Status_Endpoints
      */
     //See https://github.com/DiscipleTools/disciple-tools-theme/wiki/Site-to-Site-Link for outside of wordpress authentication
     public function add_api_routes() {
-        $namespace = 'nt_dispatch_status/v1';
+        $namespace = 'nt_postman/v1';
 
         register_rest_route(
             $namespace, '/endpoint', [
@@ -74,4 +74,4 @@ class NT_Dispatch_Status_Endpoints
         return $pass;
     }
 }
-NT_Dispatch_Status_Endpoints::instance();
+NT_Postman_Endpoints::instance();

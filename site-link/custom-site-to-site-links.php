@@ -4,8 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly
  * Configures the site link system for the network reporting
  */
 
-class NT_Dispatch_Status_Site_Links {
-    public $type = 'nt_dispatch_status';
+class NT_Postman_Site_Links {
+    public $type = 'nt_postman';
 
     private static $_instance = null;
     public static function instance() {
@@ -37,5 +37,5 @@ class NT_Dispatch_Status_Site_Links {
         return $type;
     }
 }
-NT_Dispatch_Status_Site_Links::instance();
+NT_Postman_Site_Links::instance();
 
