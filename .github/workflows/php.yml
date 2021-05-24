@@ -10,8 +10,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    env:
-      TRAVIS_COMMIT:
 
     steps:
     - uses: actions/checkout@v2
