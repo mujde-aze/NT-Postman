@@ -10,6 +10,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      PACKAGE_NAME: nt-postman
 
     steps:
     - uses: actions/checkout@v2
@@ -39,3 +41,12 @@ jobs:
     - name: Check syntax
       run: test/test_for_syntax_errors.sh
 
+    - name: Package plugin
+      run: |
+        mkdir ${{ env.PACKAGE_NAME }} |
+        cp -r nt-postman.php LICENSE tile site-link magic-link documentation version-control.json ${{ env.PACKAGE_NAME }}/
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: ${{ env.PACKAGE_NAME }}
+        path: ${{ env.PACKAGE_NAME }}

@@ -12,6 +12,11 @@
 set -x
 set -e
 
+if [ "$TRAVIS_COMMIT" = "" ] ; then
+    echo "TRAVIS_COMMIT env variable not set" >&2
+    exit 1
+fi
+
 tmpdir=$(mktemp -d)
 
 cd "$tmpdir"
@@ -26,4 +31,4 @@ chmod +x wp-cli.phar
 ./wp-cli.phar core install --url=localhost --title=test --admin_user=admin --admin_email=example@example.com
 
 # Install plugin
-./wp-cli.phar plugin install --activate "https://github.com/$TRAVIS_REPO_SLUG/archive/$TRAVIS_COMMIT.zip"
+./wp-cli.phar plugin install --activate "https://github.com/$REPO_SLUG/archive/$TRAVIS_COMMIT.zip"
