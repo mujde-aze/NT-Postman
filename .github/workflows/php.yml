@@ -14,9 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Validate composer.json and composer.lock
-      run: composer validate --strict
-
     - name: Cache Composer packages
       id: composer-cache
       uses: actions/cache@v2
@@ -34,7 +31,7 @@ jobs:
 
     # - name: Run test suite
     #   run: composer run-script test
-    
+
     # Run test scripts
     - name: Check syntax
       run: test/test_for_syntax_errors.sh
