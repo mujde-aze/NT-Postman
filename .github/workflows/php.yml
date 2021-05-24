@@ -33,5 +33,12 @@ jobs:
     #   run: composer run-script test
 
     # Run test scripts
+    - name: Check codeing standards
+      run: test/test_phpcs.sh
+
     - name: Check syntax
       run: test/test_for_syntax_errors.sh
+
+    - name: Ensure plugin is installable
+      run: test/test_installation.sh
+
