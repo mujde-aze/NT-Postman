@@ -66,11 +66,16 @@ class NT_Postman_Tile
                     'needs_nt'   => [
                         "label" => _x( 'Needs NT Posted', 'Postage Status label', 'disciple_tools' ),
                         "description" => _x( "This contact needs an NT to be posted", "Postage Status field description", 'disciple_tools' ),
-                        'color' => "#ff9800"
+                        'color' => "#F43636"
                     ],
                     'nt_sent'     => [
                         "label" => _x( "NT Posted", 'Postage Status label', 'disciple_tools' ),
                         "description" => _x( "The NT for this contact has been posted", "Postage Status field description", 'disciple_tools' ),
+                        'color' => "#FF9800"
+                    ],
+                    'nt_received'     => [
+                        "label" => _x( "NT Received", 'Postage Status label', 'disciple_tools' ),
+                        "description" => _x( "The contact has received the NT", "Postage Status field description", 'disciple_tools' ),
                         'color' => "#4CAF50"
                     ],
                 ],
