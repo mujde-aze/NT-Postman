@@ -56,74 +56,22 @@ class NT_Postman_Tile
              */
 
             /**
-             * This is an example of a text field
-             */
-            $fields['nt_postman_text'] = [
-                'name'        => __( 'Text', 'disciple_tools' ),
-                'description' => _x( 'Text', 'Optional Documentation', 'disciple_tools' ),
-                'type'        => 'text',
-                'default'     => '',
-                'tile' => 'nt_postman',
-                'icon' => get_template_directory_uri() . '/dt-assets/images/edit.svg',
-            ];
-            /**
-             * This is an example of a multiselect field
-             */
-            $fields["nt_postman_multiselect"] = [
-                "name" => __( 'Multiselect', 'disciple_tools' ),
-                "default" => [
-                    "one" => [ "label" => __( "One", 'disciple_tools' ) ],
-                    "two" => [ "label" => __( "Two", 'disciple_tools' ) ],
-                    "three" => [ "label" => __( "Three", 'disciple_tools' ) ],
-                    "four" => [ "label" => __( "Four", 'disciple_tools' ) ],
-                ],
-                "tile" => "nt_postman",
-                "type" => "multi_select",
-                "hidden" => false,
-                'icon' => get_template_directory_uri() . '/dt-assets/images/edit.svg',
-            ];
-            /**
              * This is an example of a key select field
              */
             $fields["nt_postman_keyselect"] = [
-                'name' => "Key Select",
+                'name' => "NT Postage Status",
                 'type' => 'key_select',
                 "tile" => "nt_postman",
                 'default' => [
-                    'new'   => [
-                        "label" => _x( 'New', 'Training Status label', 'disciple_tools' ),
-                        "description" => _x( "New training added to the system", "Training Status field description", 'disciple_tools' ),
+                    'needs_nt'   => [
+                        "label" => _x( 'Needs NT Posted', 'Postage Status label', 'disciple_tools' ),
+                        "description" => _x( "This contact needs an NT to be posted", "Postage Status field description", 'disciple_tools' ),
                         'color' => "#ff9800"
                     ],
-                    'proposed'   => [
-                        "label" => _x( 'Proposed', 'Training Status label', 'disciple_tools' ),
-                        "description" => _x( "This training has been proposed and is in initial conversations", "Training Status field description", 'disciple_tools' ),
-                        'color' => "#ff9800"
-                    ],
-                    'scheduled' => [
-                        "label" => _x( 'Scheduled', 'Training Status label', 'disciple_tools' ),
-                        "description" => _x( "This training is confirmed, on the calendar.", "Training Status field description", 'disciple_tools' ),
+                    'nt_sent'     => [
+                        "label" => _x( "NT Posted", 'Postage Status label', 'disciple_tools' ),
+                        "description" => _x( "The NT for this contact has been posted", "Postage Status field description", 'disciple_tools' ),
                         'color' => "#4CAF50"
-                    ],
-                    'in_progress' => [
-                        "label" => _x( 'In Progress', 'Training Status label', 'disciple_tools' ),
-                        "description" => _x( "This training is confirmed, on the calendar, or currently active.", "Training Status field description", 'disciple_tools' ),
-                        'color' => "#4CAF50"
-                    ],
-                    'complete'     => [
-                        "label" => _x( "Complete", 'Training Status label', 'disciple_tools' ),
-                        "description" => _x( "This training has successfully completed", "Training Status field description", 'disciple_tools' ),
-                        'color' => "#4CAF50"
-                    ],
-                    'paused'       => [
-                        "label" => _x( 'Paused', 'Training Status label', 'disciple_tools' ),
-                        "description" => _x( "This contact is currently on hold. It has potential of getting scheduled in the future.", "Training Status field description", 'disciple_tools' ),
-                        'color' => "#ff9800"
-                    ],
-                    'closed'       => [
-                        "label" => _x( 'Closed', 'Training Status label', 'disciple_tools' ),
-                        "description" => _x( "This training is no longer going to happen.", "Training Status field description", 'disciple_tools' ),
-                        "color" => "#366184",
                     ],
                 ],
                 'icon' => get_template_directory_uri() . '/dt-assets/images/edit.svg',
@@ -149,18 +97,6 @@ class NT_Postman_Tile
             $this_post = DT_Posts::get_post( $post_type, get_the_ID() );
             $post_type_fields = DT_Posts::get_post_field_settings( $post_type );
             ?>
-
-            <!--
-            @todo you can add HTML content to this section.
-            -->
-
-            <div class="cell small-12 medium-4">
-                <!-- @todo remove this notes section-->
-                <strong>You can do a number of customizations here.</strong><br><br>
-                All the post-type fields: ( <?php echo '<code>' . esc_html( implode( ', ', array_keys( $post_type_fields ) ) ) . '</code>' ?> )<br><br>
-                All the fields for this post: ( <?php echo '<code>' . esc_html( implode( ', ', array_keys( $this_post ) ) ) . '</code>' ?> )<br><br>
-            </div>
-
         <?php }
     }
 }
