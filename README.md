@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/DiscipleTools/nt-postman.svg?branch=master)](https://travis-ci.com/DiscipleTools/nt-postman)
+![Build Status](https://github.com/crafton/nt-postman/actions/workflows/nt-postman.yml/badge.svg)
 
 # Disciple Tools - NT Postman
 
