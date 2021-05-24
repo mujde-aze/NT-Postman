@@ -10,6 +10,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      TRAVIS_COMMIT:
 
     steps:
     - uses: actions/checkout@v2
@@ -38,7 +40,4 @@ jobs:
 
     - name: Check syntax
       run: test/test_for_syntax_errors.sh
-
-    - name: Ensure plugin is installable
-      run: test/test_installation.sh
 
