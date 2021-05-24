@@ -12,11 +12,6 @@
 set -x
 set -e
 
-if [ "$TRAVIS_COMMIT" = "" ] ; then
-    echo "TRAVIS_COMMIT env variable not set" >&2
-    exit 1
-fi
-
 tmpdir=$(mktemp -d)
 
 cd "$tmpdir"
