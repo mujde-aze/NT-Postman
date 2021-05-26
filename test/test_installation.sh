@@ -8,14 +8,8 @@
 # If this fails, we know we have an issue that we need to fix to make the plugin
 # installable again
 
-
 set -x
 set -e
-
-if [ "$TRAVIS_COMMIT" = "" ] ; then
-    echo "TRAVIS_COMMIT env variable not set" >&2
-    exit 1
-fi
 
 tmpdir=$(mktemp -d)
 
@@ -27,8 +21,8 @@ chmod +x wp-cli.phar
 
 # Set up basic Wordpress installation:
 ./wp-cli.phar core download
-./wp-cli.phar config create --force --dbname=testdb --dbuser=travis
+./wp-cli.phar config create --force --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASSWORD
 ./wp-cli.phar core install --url=localhost --title=test --admin_user=admin --admin_email=example@example.com
 
 # Install plugin
-./wp-cli.phar plugin install --activate "https://github.com/$REPO_SLUG/archive/$TRAVIS_COMMIT.zip"
+./wp-cli.phar plugin install --activate ${GITHUB_WORKSPACE}/${PACKAGE_NAME}.zip

@@ -8,10 +8,12 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     env:
       PACKAGE_NAME: nt-postman
+      DB_NAME: testdb
+      DB_USER: ${{ secrets.DB_USER }}
+      DB_PASSWORD: ${{ secrets.DB_PW }}
 
     steps:
     - uses: actions/checkout@v2
@@ -28,13 +30,6 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
-
-    # - name: Run test suite
-    #   run: composer run-script test
-
-    # Run test scripts
     - name: Check codeing standards
       run: test/test_phpcs.sh
 
@@ -43,8 +38,15 @@ jobs:
 
     - name: Package plugin
       run: |
-        mkdir ${{ env.PACKAGE_NAME }} |
+        mkdir ${{ env.PACKAGE_NAME }}
         cp -r nt-postman.php LICENSE tile site-link magic-link documentation version-control.json ${{ env.PACKAGE_NAME }}/
+        zip -r ${{ env.PACKAGE_NAME }}.zip ${{ env.PACKAGE_NAME }}
+
+    - name: Test plugin installation
+      run: |
+        sudo /etc/init.d/mysql start
+        mysql -e 'CREATE DATABASE ${{ env.DB_NAME }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
+        test/test_installation.sh
 
     - uses: actions/upload-artifact@v2
       with:
