@@ -16,7 +16,7 @@ To help keep track of all the NT requests and ensure nobody gets left out.
 - Update contact NT status
 - Allow Postman to see only contacts with the appropriate status
 - Generate a printable PDF of contacts
-- Update Faith Milestone to: "has Bible"
+- Update Faith Milestone to: "Has Bible"
 
 ## Requirements
 
