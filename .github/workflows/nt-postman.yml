@@ -28,14 +28,14 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    - name: Check codeing standards
+    - name: Check coding standards
       run: test/test_phpcs.sh
 
     - name: Check syntax
       run: test/test_for_syntax_errors.sh
 
     - name: Package plugin
-      run: build-utils/package_plugin.sh
+      run: .github/scripts/package_plugin.sh
 
     - name: Test plugin installation
       run: |
