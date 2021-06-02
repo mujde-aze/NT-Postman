@@ -63,5 +63,5 @@ jobs:
     - uses: ncipollo/release-action@v1
       with:
         artifacts: ${{ env.PACKAGE_NAME }}
-        bodyFile: "CHANGELOG.md"
+        bodyFile: "${{ env.PACKAGE_NAME }}/CHANGELOG.md"
         token: ${{ secrets.GITHUB_TOKEN }}
