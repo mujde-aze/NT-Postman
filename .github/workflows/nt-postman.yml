@@ -35,18 +35,10 @@ jobs:
       run: test/test_for_syntax_errors.sh
 
     - name: Package plugin
-      run: |
-        mkdir ${{ env.PACKAGE_NAME }}
-        cp -r nt-postman.php LICENSE tile site-link magic-link documentation version-control.json ${{ env.PACKAGE_NAME }}/
-        zip -r ${{ env.PACKAGE_NAME }}.zip ${{ env.PACKAGE_NAME }}
+      run: build-utils/package_plugin.sh
 
     - name: Test plugin installation
       run: |
         sudo /etc/init.d/mysql start
         mysql -e 'CREATE DATABASE ${{ env.DB_NAME }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
         test/test_installation.sh
-
-    - uses: actions/upload-artifact@v2
-      with:
-        name: ${{ env.PACKAGE_NAME }}
-        path: ${{ env.PACKAGE_NAME }}

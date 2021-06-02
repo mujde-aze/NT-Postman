@@ -21,8 +21,8 @@ chmod +x wp-cli.phar
 
 # Set up basic Wordpress installation:
 ./wp-cli.phar core download
-./wp-cli.phar config create --force --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASSWORD
+./wp-cli.phar config create --force --dbname="$DB_NAME" --dbuser="$DB_USER" --dbpass="$DB_PASSWORD"
 ./wp-cli.phar core install --url=localhost --title=test --admin_user=admin --admin_email=example@example.com
 
 # Install plugin
-./wp-cli.phar plugin install --activate ${GITHUB_WORKSPACE}/${PACKAGE_NAME}.zip
+./wp-cli.phar plugin install --activate "$GITHUB_WORKSPACE/$PACKAGE_NAME".zip
