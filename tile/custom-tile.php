@@ -63,6 +63,11 @@ class NT_Postman_Tile
                 'type' => 'key_select',
                 "tile" => "nt_postman",
                 'default' => [
+                    'none'   => [
+                        "label" => _x( 'None', 'Postage Status label', 'disciple_tools' ),
+                        "description" => _x( "Postage status not set", "Postage Status field description", 'disciple_tools' ),
+                        'color' => "#366184"
+                    ],
                     'needs_nt'   => [
                         "label" => _x( 'Needs NT Posted', 'Postage Status label', 'disciple_tools' ),
                         "description" => _x( "This contact needs an NT to be posted", "Postage Status field description", 'disciple_tools' ),
