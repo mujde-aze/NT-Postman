@@ -5,7 +5,7 @@
  * Description: Disciple Tools - NT Postman helps to keep track of contacts that require NTs posted.
  * Text Domain: nt-postman
  * Domain Path: /languages
- * Version:  0.2.1
+ * Version:  0.2.2
  * Author URI: https://github.com/crafton
  * GitHub Plugin URI: https://github.com/crafton/NT-Postman
  * Requires at least: 4.7.0
