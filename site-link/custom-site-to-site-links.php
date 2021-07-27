@@ -26,7 +26,8 @@ class NT_Postman_Site_Links {
     public function site_link_capabilities( $args ) {
         if ( $this->type === $args['connection_type'] ) {
             $args['capabilities'][] = 'access_contacts';
-            $args['capabilities'][] = 'view_any_contacts';
+            $args['capabilities'][] = 'create_contacts';
+            $args['capabilities'][] = 'update_any_contacts';
         }
         return $args;
     }
