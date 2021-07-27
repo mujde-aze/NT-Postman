@@ -82,23 +82,9 @@ class NT_Postman {
     private function __construct() {
         $is_rest = dt_is_rest();
 
-        /**
-         * @todo Decide if you want to create a custom site-to-site link
-         * To remove: delete the line below and remove the folder named /site-link
-         */
         require_once( 'site-link/custom-site-to-site-links.php' ); // add site to site link class and capabilities
 
-        /**
-         * @todo Decide if you want to add a custom tile
-         * To remove: delete the line below and remove the folder named /tile
-         */
         require_once( 'tile/custom-tile.php' ); // add custom tile
-
-        /**
-         * @todo Decide if you want to create a magic link
-         * To remove: delete the line below and remove the folder named /magic-link
-         */
-        require_once( 'magic-link/magic-link.php' );
 
         /**
          * @todo Decide if you want to support localization of your plugin
