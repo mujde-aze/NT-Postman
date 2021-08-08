@@ -29,6 +29,7 @@ class NT_Postman_Site_Links {
             $args['capabilities'][] = 'create_contacts';
             $args['capabilities'][] = 'update_any_contacts';
             $args['capabilities'][] = 'view_any_contacts';
+            $args['capabilities'][] = 'dt_list_users';
         }
         return $args;
     }
